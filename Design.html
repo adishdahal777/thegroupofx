@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Member Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen ">
+  <div class="h-[525px] w-[860px] rounded-[10px] flex flex-row bg-white shadow-lg">
+    <div class="w-[364px] h-[458px]  my-[60px] mx-[10px]">
+      <img src="./images/chopper.png" alt="Chopper" class="  rounded-[20px]">
+    </div>
+    <div class="w-[496px] h-[525px] px-[27px] py-[17px] flex flex-col gap-[30px]">
+      <div class="w-full flex flex-col items-center">
+        <h1 class="text-[#5c4098] text-[32px] font-bold">Member Login</h1>
+        <p class="text-[16px] text-gray-600">9anime - a better place to watch anime online for free!</p>
+      </div>
+      <form class="w-full flex flex-col gap-[20px]">
+        <div class="w-full h-[63px] flex items-center px-[10px] py-[20px] border border-5 rounded-md">
+          <input type="email" placeholder="Your Email" name="email" class="w-full outline-none" required>
+          <span class="iconify text-[24px] text-[#7346B3]" data-icon="ri:user-fill"></span>
+        </div>
+        <div class="w-full h-[63px] flex items-center px-[10px] py-[20px] border border-5 rounded-md">
+          <input type="password" placeholder="Password" name="password" class="w-full outline-none " required>
+          <span class="iconify text-[24px] text-[#7346B3]" data-icon="mdi:password-outline"></span>
+        </div>
+        <div class="w-full flex justify-between items-center">
+          <div class="flex items-center gap-[5px]">
+            <input type="checkbox" id="remember" class="h-[15px] w-[15px] rounded-sm border-gray-300">
+            <label for="remember" class="text-[12px] text-gray-600">Remember me</label>
+          </div>
+          <a href="#" class="text-[12px] text-[#7346B3] ">Forgot your password?</a>
+        </div>
+        <button type="submit" class="bg-[#5A2E98] w-full h-[63px] text-white rounded-md ">Login</button>
+      </form>
+      <div class="w-full text-center">
+        <p class="text-[16px] text-gray-600">
+          Don't have an account? 
+          <a href="#" class="text-[#5C4098]  font-bold">Sign up</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
