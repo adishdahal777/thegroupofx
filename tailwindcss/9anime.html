@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>9 Anime Clone</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iconify/2.0.0/iconify.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+                        display: ['Oswald', 'ui-sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    colors: {
+                        primary: '#5C4098',
+                        secondary: '#0E0E0E',
+                    },
+                    fontSize: {
+                        xxs: '0.625rem',
+                        xxl: '1.75rem',
+                        '4xl': '2.5rem',
+                    },
+                },
+            },
+        }
+    </script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@400;600&family=Oswald:wght@500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+</head>
+
+<body class="bg-secondary">
+
+    <div class="bg-black/50 fixed top-0 h-full w-full flex justify-center items-center hidden" id="loginoverlay">
+        <section class="hidden" id="loginmodal">
+            <div class="relative bg-white h-[525px] w-[860px] rounded-lg flex flex-row justify-end">
+                <button id="loginmodalclose" class=" absolute right-2 top-2">
+                    <span class="iconify" data-icon="charm:cross" data-width="40"></span>
+                </button>
+                <img src="./images/chopper.png" alt="Choppa"
+                    class="h-[460px] absolute top-[-20px] left-[-40px] hidden lg:block" />
+                <div class="w-[502px] h-full px-[27px] py-[17px] space-y-[30px] flex flex-col items-center">
+                    <div class="w-[350px] space-y-[10px]">
+                        <h1 class="text-primary font-bold text-[32px] text-center">
+                            Member Login
+                        </h1>
+                        <p class="text-[16px] font-normal leading-[19px] text-center">
+                            9anime - a better place to watch anime online for free!
+                        </p>
+                    </div>
+                    <form class="w-full">
+                        <div class="space-y-[20px]">
+                            <input type="text" placeholder="Your Email"
+                                class="h-[62px] w-full px-[10px] py-[20px] box-border outline-none bg-[#EBE3F6] text-[16px]" />
+                            <input type="text" placeholder="Password"
+                                class="h-[62px] w-full px-[10px] py-[20px] box-border outline-none bg-[#EBE3F6] text-[16px]" />
+                        </div>
+                    </form>
+                    <div class="justify-between w-full flex flex-row items-center">
+                        <div class="space-x-2 flex flex-row items-center">
+                            <input type="checkbox" /><label for="remember" class="text-[12px] font-normal">Remember
+                                me</label>
+                        </div>
+                        <p class="text-[12px] font-medium text-primary">
+                            Forgot your password?
+                        </p>
+                    </div>
+                    <button id="loginButton"
+                        class="bg-primary w-full h-[63px] flex items-center justify-center text-white py-[20px] text-[22px]">
+                        Login
+                    </button>
+                    <div class="flex flex-row space-x-2">
+                        <p class="text-[16px] font-normal">Don't have and account?</p>
+                        <p class="text-primary text-[16px] font-semibold">Sign Up</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <nav class="mx-3 lg:mx-[150px] my-[30px] flex flex-row justify-between items-center">
+        <img src="./images/logo.png" alt="Anime Logo" class="w-[180px]">
+        <button id="showLoginForm" type="button"
+            class="bg-primary px-[30px] py-[15px] rounded-full text-[20px] text-white">
+            Sign In
+        </button>
+    </nav>
+
+    <section class="mx-3 lg:mx-[250px] my-[100px] flex flex-col justify-center items-center space-y-[80px]">
+        <img src="./images/logo.png" alt="Anime Logo" class="w-[245px]">
+        <div class="space-y-[20px] flex flex-col justify-center items-center max-w-[820px] ">
+            <div class="flex">
+                <input type="text" name="search" placeholder="Search for an anime..."
+                    class="h-[75px]  w-full lg:w-[720px] rounded-tl-[10px] rounded-bl-[10px] outline-none pl-[30px] bg-[#1C1C1C] text-white text-xl">
+                <button type="button"
+                    class="bg-primary text-white h-[75px] w-[100px] rounded-tr-[10px] rounded-br-[10px] flex items-center justify-center">
+                    <span class="iconify" data-icon="material-symbols:search" data-width="30"></span>
+                </button>
+            </div>
+            <p class="text-[#8AA2A4] text-[19px] text-center">9anime.to - Just a better place to watch anime online for
+                free!</p>
+            <div class="space-x-[10px] flex flex-row justify-center items-center">
+                <div class="text-[#8AA2A4] ">
+                    <p class="font-bold text-[19px]">545k</p>
+                    <p class="text-[14px]">shares</p>
+                </div>
+                <button class="bg-blue-500 py-3  px-8 text-white rounded-md flex flex-row items-center space-x-5">
+                    <span class="iconify" data-icon="material-symbols:share" data-width="30"></span>
+                    <p class="hidden lg:block">
+                        Share
+                    </p>
+                </button>
+            </div>
+            <div class="space-x-[5px] flex flex-row text-primary items-center text-[23px]">
+                <span class="iconify" data-icon="material-symbols:star" data-width="30"></span>
+                <p>Connect with us</p>
+            </div>
+            <button class="bg-primary px-10 py-4 rounded-md text-white">
+                Go To Home Page
+            </button>
+        </div>
+    </section>
+
+    <section class="mx-3 lg:mx-[250px] my-[100px]">
+        <div class="text-white text-left space-y-5">
+            <p>
+                9anime is a free anime website where millions visit to watch anime online.
+            </p>
+            <p>
+                9anime provides users with various genres including Action, Comedy, Demons, Drama, Historical, Romance,
+                Samurai, School, Shoujo Ai, Shounen Supernatural, etc. This is the perfect place to expand the
+                imagination of children under 12 years old as well as spread beautiful images of friendship, family,
+                teammates, magic, etc. 9anime is committed to keeping you updated with the latest releases and providing
+                excellent streaming capabilities for the best experience possible.
+            </p>
+            <h3 class="text-[34px]">Watch Anime Online Free</h3>
+            <p>
+                It all started in 2016 when we officially launched the system of file sharing. We boast HD quality as
+                well as fast download speed. To provide our users with multiple choices, we use links from third party
+                sources like mp4upload, vidstream, streamtape, mycloud. Your Favorite Anime is available for live
+                streaming and can reach a huge number of audiences around the world. The demand for Japanese anime has
+                steadily been on the rise recently all over the world. When 9anime was shut down for the first time,
+                multiple fake copies that are prone to viruses and malware came into existence. For your utmost safety,
+                visit our official 9anime website only.
+            </p>
+        </div>
+    </section>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+
+        $('#showLoginForm').click(function () {
+            $('#loginoverlay').removeClass('hidden')
+            $("#loginmodal").fadeIn(500);
+
+        });
+
+        $('#loginmodalclose').click(function () {
+            $('#loginmodal').fadeOut(500)
+            setTimeout(() => {
+                $('#loginoverlay').addClass('hidden')
+            }, 500)
+        });
+
+        $('#loginButton').click(function () {
+            Swal.fire({
+                title: 'Error!',
+                text: 'Do you want to continue',
+                icon: 'error',
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                },
+                showClass: {
+                    popup: `
+                    animate__animated
+                    animate__fadeInUp
+                    animate__faster
+                    `
+                },
+                hideClass: {
+                    popup: `
+                    animate__animated
+                    animate__fadeOutUp
+                    animate__faster
+                    `
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
